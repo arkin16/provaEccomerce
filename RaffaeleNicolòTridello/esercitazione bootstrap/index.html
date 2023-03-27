@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <script src="/script/helperDom/helperDom.js" type="module"></script>
+    <script src="/script/Bl/postProduct/postProduct.js" type="module"></script>
+    <script src="/script/Bl/getProduct/getProduct.js" type="module"></script>
+    <script src="/script/Ul/main.js" type="module"></script>
+
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="navbar">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-md bg-light shadow-sm p-3 mb-5 bg-body rounded">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="#">Home</a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false"> Cerca prodotti </a>
+                      <ul class="dropdown-menu">
+                        <li><a id="attivaNome" class="dropdown-item">Cerca per nome</a></li>
+                        <li><a id="attivaPrezzo" class="dropdown-item">Cerca per prezzo</a></li>
+                        <li><a id="attivaCategoria" class="dropdown-item">Cerca per categoria</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="carelllo.html">Carrello</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <!-- chiusura col navabar -->
+        </div>
+        <!-- chiusura row navbar -->
+      </div>
+      <!-- chiusura div id navbar -->
+      <div id="titolo">
+        <div class="row">
+          <div class="col"><h1 class="text-center">Elenco prodotti disponibili</h1></div>
+        </div>
+      </div>
+      <!-- chiusura div id titolo-->
+
+
+      <div id="search-bar">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar bg-light">
+              <div class="container-fluid d-flex justify-content-center">
+                <form class="d-flex" role="search">
+                  
+                  <div id="cercaPerNome">
+                    <input id="nome" class="form-control me-2" type="search" aria-label="Search" placeholder="Cerca Per Nome"/>
+                    <button id="cercaNome" class="btn btn-secondary" >Cerca</button>
+                  </div>
+
+                  <div id="cercaPerPrezzo" style="display:none;">
+                    <label for="">Cerca per Prezzo</label>
+                    <input id="prezzoMin" class="form-control me-2" type="search" aria-label="Search" placeholder="Cerca  per prezzo Minimo" />
+                    <input id="prezzoMax" class="form-control me-2" type="search" aria-label="Search" placeholder="Cerca  per prezzo Massimo"/>
+                    <button id="cercaPrezzo" class="btn btn-secondary" >Cerca</button>
+                  </div>
+
+                  <div id="cercaPerCategoria" style="display: none;">
+                    <select id="selectCategory"></select>
+                  <button id="cercaCategoria" class="btn btn-secondary" >Cerca</button>
+                  </div>
+                </form>
+
+              </div>
+            </nav>
+          </div>
+          <!-- chiusura col search-bar -->
+        </div>
+        <!-- chiusura row search-bar -->
+      </div>
+
+
+
+      <!-- chiusura div id search-bar-->
+      <div id="card">
+        <div class="container">
+          <div class="row" id="row-card">
+            <!-- <div class="col-3">
+              <div class="card border border-0">
+                <img src="./assets/immagini/1.jpg" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <p class="card-text">Prodotto:</p>
+                  <p class="card-text">Prezzo:</p>
+                  <p class="card-text">N. pezzi rimasti</p>
+                  <a id="a-card" href="#" class="d-flex justify-content-center">Aggiungi al carrello</a>
+                </div> -->
+              </div>
+              <!-- chiusura row-card -->
+            </div>
+            <!-- chiusura class container della card -->
+          </div>
+          <!-- chiusura div id card-->
+        </div>
+      </div>
+    </div>
+    <!-- chiusura div container fluid -->
+  </body>
+</html>
