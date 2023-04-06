@@ -8,8 +8,8 @@ function getValueButton(event: MouseEvent){
  console.log(target.value);
  const allProdocts = Prodotti.All();
  
- const data = Filters.ProdottiPost(); 
-
+ const data = Filters.ProdottiPost(Number(target.value), allProdocts); 
+ CarelloSever.post(data)   
 }
 
 export{getValueButton}

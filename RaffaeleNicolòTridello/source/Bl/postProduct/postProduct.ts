@@ -1,15 +1,17 @@
 import { IProductsPost } from "../../Entitis/InterfarcePostProduct";
-
+import { IProductsTotal } from "../../Entitis/interfaceProduct";
 namespace CarelloSever{
-    export async function post(){
+    export async function post(prodotto:IProductsTotal){
     const apiPostCarello = "http://82.59.202.23/northwindwebapi/api/Carrello/"
     const notsicuretoken = localStorage.getItem("token"); 
     const token = notsicuretoken as string
 
-    const prodotto:IProductsPost = {
-        idProdotto: 1,
-        prodotto: "pippo",
-        prezzo: 1,
+       
+
+    const Prodotto:IProductsPost = {
+        idProdotto: prodotto.productId,
+        prodotto: prodotto.productName,
+        prezzo: prodotto.unitPrice,
         quantita:1,
         idcarrello:0,
         cliente: token
@@ -20,7 +22,7 @@ namespace CarelloSever{
     headers: {
         "Content-Type": "application/json",
     },
-    body: JSON.stringify(prodotto)
+    body: JSON.stringify(Prodotto)
     })
 
     console.log (response.json)

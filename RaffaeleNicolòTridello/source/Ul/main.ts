@@ -10,11 +10,13 @@ import { Categorie } from "../Bl/getCategora/getCategoria.js";
 window.addEventListener("load", async () => {
   const dataProducts: IProductsTotal[] = await Product.get();
   Motor.start(dataProducts);
-  Prodotti.All()
 });
+
+let globalDataProducts: IProductsTotal[] = [];
 
 namespace Motor {
   export async function start(dataProducts: IProductsTotal[]) {
+    globalDataProducts = [...dataProducts]
     Card.generate(dataProducts);
 
     const categoria: ICategoria[] = await Categorie.get();
@@ -108,7 +110,8 @@ namespace Motor {
 
 }
 export namespace Prodotti{
-  export function All(dataProducts:IProductsTotal[]):IProductsTotal[]{
-    return dataProducts
+  export function All():IProductsTotal[]{
+    const dataProducts = [...globalDataProducts];
+    return dataProducts;
   } 
 }

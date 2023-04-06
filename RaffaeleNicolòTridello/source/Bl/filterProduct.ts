@@ -36,7 +36,7 @@ namespace Filters {
     return tmpData;
   }
 
-  export function ProdottiPost(id:number){
+  export function ProdottiPost(id:number, prodotti:IProductsTotal[]){
     let tmpData = prodotti.filter((element) => {
       return id.toString() == element.categoryId;
     });
